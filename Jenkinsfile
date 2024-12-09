@@ -1,5 +1,7 @@
 pipeline {
-   tools { docker = docker
+  environment {
+        // Define environment variables for Docker, e.g., image name
+        DOCKER_IMAGE = "myapp-image"
     
    }
   agent any
