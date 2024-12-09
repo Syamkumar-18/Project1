@@ -1,13 +1,10 @@
-node {
-  stage('SCM') {
-    checkout scm
+pipeline {
+  agent any
+  stages {
+    stage {
+      steps (cloning git ) {
+        git branch: 'main', url: 'https://github.com/Syamkumar-18/Project1.git'
+      }
+    }
   }
-  }
-  stage("sendemail") {
-    mail bcc: '', body: '''sonarqube detailed report on the project
-http://20.89.90.110:9090/dashboard?id=myproject''', cc: '', from: '', replyTo: '', subject: 'report', to: 'nocturnaldevops@gmail.com'
 }
-}
-#Hello worldasdfasdfa
-#hello again
-#hello again
